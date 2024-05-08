@@ -19,7 +19,7 @@ import jakarta.validation.Valid;
 /**
  * The interface UserRegistrartionAPI
  * 
- * @author VijayShree
+ * @author 
  *
  */
 public interface UserRegistrationAPI {
@@ -29,6 +29,8 @@ public interface UserRegistrationAPI {
 	 * 
 	 * @return all users details
 	 */
+
+	
 	@GetMapping(value = "/api/users", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<List<UserDetailsResponse>> getAllUsers();
 
@@ -38,7 +40,7 @@ public interface UserRegistrationAPI {
 	 * @param userDetailsRequest
 	 * @return success message
 	 */
-	@PostMapping(value = "api/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value = "/api/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	ResponseEntity<Void> saveUser(@RequestBody @Valid UserDetailsRequest userDetailsRequest);
 
 	/**

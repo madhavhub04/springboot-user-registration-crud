@@ -10,7 +10,7 @@ import jakarta.validation.Valid;
 public interface UserRegistrationService {
 
 	public List<UserDetailsResponse> getAllUsers();
-
+	
 	public void saveUser(@Valid UserDetailsRequest userDetailsRequest);
 
 	public void deleteUser(Integer userid);

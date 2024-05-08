@@ -1,4 +1,4 @@
-package com.dps.usercrud.service;
+ package com.dps.usercrud.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +24,14 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
 		final List<UserDetailsResponse> userResponses = new ArrayList<>();
 		List<UserDetails> users = registrationRepository.findAll();
 		users.stream()
-				.forEach(user -> userResponses.add(UserDetailsResponse.builder().id(user.getId()).fname(user.getFname())
-						.lname(user.getLname()).gender(user.getGender()).address(user.getAddress()).city(user.getCity())
-						.contact(user.getContact()).email(user.getEmail()).pin(user.getPin()).state(user.getState())
+				.forEach(user -> userResponses.add(UserDetailsResponse.builder()
+						.id(user.getId()).fname(user.getFname())
+						.lname(user.getLname())	.gender(user.getGender())
+						.address(user.getAddress()).city(user.getCity())
+						.contact(user.getContact()).email(user.getEmail())
+						.pin(user.getPin()).state(user.getState())
 						.build()));
+		System.out.println("get server layer");
 		return userResponses;
 	}
 
@@ -39,6 +43,7 @@ public class UserRegistrationServiceImpl implements UserRegistrationService {
 				.city(userDetailsRequest.getCity()).pin(userDetailsRequest.getPin())
 				.state(userDetailsRequest.getState()).contact(userDetailsRequest.getContact())
 				.email(userDetailsRequest.getEmail()).build();
+		System.out.println("server layer");
 		registrationRepository.save(userDetails);
 	}
 

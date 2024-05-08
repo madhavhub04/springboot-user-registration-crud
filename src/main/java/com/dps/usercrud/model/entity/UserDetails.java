@@ -28,33 +28,33 @@ import lombok.NoArgsConstructor;
 	})
 public class UserDetails {
 	@Id
-	@Column(nullable = false, name="user_id")
+	@Column(nullable = true, name="user_id")
 	private Integer id;
 	
-	@Column(nullable = false, name="user_first_name")
+	@Column(nullable = true, name="user_first_name")
 	private String fname;
 	
-	@Column(nullable = false, name="user_last_name")
+	@Column(nullable = true, name="user_last_name")
 	private String lname;
 	
-	@Column(nullable = false, name="user_gender")
+	@Column(nullable = true, name="user_gender")
 	private String gender;
 	
-	@Column(nullable = false, name="user_address")
+	@Column(nullable = true, name="user_address")
 	private String address;
 	
-	@Column(nullable = false, name="user_city")
+	@Column(nullable = true, name="user_city")
 	private String city;
 	
-	@Column(nullable = false, name="user_state")
+	@Column(nullable = true, name="user_state")
 	private String state;
 	
-	@Column(nullable = false, name="user_city_pincode")
+	@Column(nullable = true, name="user_city_pincode")
 	private Integer pin;
 	
 	@Column(name="user_email")
-	private String email;
+ 	private String email;
 	
-	@Column(nullable = false, name="user_phone_number")
+	@Column(nullable = true, name="user_phone_number")
 	private BigInteger contact;	
 }

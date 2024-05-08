@@ -4,17 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.dps.usercrud.model.request.UserDetailsRequest;
 import com.dps.usercrud.model.response.UserDetailsResponse;
 import com.dps.usercrud.service.UserRegistrationService;
 
 import jakarta.validation.Valid;
-import lombok.NoArgsConstructor;
 
-@Controller
-@NoArgsConstructor
+@RestController
 public class UserRegistrationController implements UserRegistrationAPI {
 
 	@Autowired
@@ -22,6 +20,7 @@ public class UserRegistrationController implements UserRegistrationAPI {
 
 	@Override
 	public ResponseEntity<List<UserDetailsResponse>> getAllUsers() {
+		System.out.println("123");
 		List<UserDetailsResponse> allUsers = userRegistrationService.getAllUsers();
 		return ResponseEntity.ok(allUsers);
 	}
@@ -44,5 +43,7 @@ public class UserRegistrationController implements UserRegistrationAPI {
 		userRegistrationService.updateUser(userid, userDetailsRequest);
 		return ResponseEntity.ok(null);
 	}
+
+	
 
 }
